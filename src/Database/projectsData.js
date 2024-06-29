@@ -13,6 +13,13 @@ const projectsData = [
         link: "https://greengourmet.netlify.app/",
         image: "/ProjectImage/greengourmet.png"
     },
+    {
+        id: 3,
+        title: "Hacker Service News",
+        description: "<p><strong>Tech News Updates</strong></p><p><strong>Project</strong>: Final exam for Javascript Advance course at Start2Impact</p><p><strong>Technologies</strong>: HTML, CSS, JS, Webpack,API</p><p><strong>Description</strong>: This webapp filter all the tech news form the Hacker News API and display them.</p><p><strong>Main challenge</strong>: This was my first API call, i challenge the frustrations of the error with empty data in the API. I need to manage the error and the data to avoid them in the UI.</p>",
+        link: "https://hackerservicenews.netlify.app/",
+        image: "/ProjectImage/hackerservicenews.png"
+    },
 ];
 
 export default projectsData;
