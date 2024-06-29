@@ -96,6 +96,7 @@ export const ProjectButton = styled.a`
 
   .btn-text {
     position: relative;
+    line-height: 2;
     z-index: 1;
   }
 `;
