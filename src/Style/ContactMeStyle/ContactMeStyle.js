@@ -49,6 +49,12 @@ export const ContactContent = styled.div`
   .animate {
     animation: ${slideIn} 2s ease-out;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      align-self: center;
+    }
+  }
 `;
 
 export const ContactForm = styled.form`
@@ -185,7 +191,7 @@ export const ContactButton = styled.button`
 
 export const ConfirmationMessage = styled.p`
   color: #FBFBFF;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-top: 20px;
   animation: ${slideDown} 1s ease-out;
 `;

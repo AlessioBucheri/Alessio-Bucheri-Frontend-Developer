@@ -14,6 +14,7 @@ export const ProjectCardContainer = styled.div`
     margin: 20px;
 
     @media (max-width: 768px) {
+        padding: 0;
         flex-direction: column;
     }
 `
@@ -33,7 +34,8 @@ export const ProjectCardTitle = styled.p`
     padding: 20px;
 
     @media (max-width: 768px) {
-        font-size: 5vw;
+        font-size: 8vw;
+        font-weight: bold;
         align-self: center;
         text-align: center;
     }
@@ -46,7 +48,7 @@ export const ProjectCardText = styled.p`
     line-height: 1.5;
 
     @media (max-width: 768px) {
-        font-size: 3vw;
+        font-size: 5vw;
         align-self: flex-start;
         text-align: flex-start;
     }
@@ -107,4 +109,10 @@ export const ProjectCardImg = styled.img`
     margin: 0 auto;
     text-align: center;
     border: 3px solid #39393A;
+    border-radius: 20px;
+
+    @media (max-width: 768px) {
+        margin-top: 20px;
+        width: 80vw;
+    }
 `
