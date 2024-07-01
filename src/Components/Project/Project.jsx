@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import { motion } from "framer-motion";
 import projectsData from "../../Database/projectsData";
 import ProjectCard from "./ProjectCard";
 import { ProjectContainer } from "../../Style/ProjectStyle/ProjectStyle";
