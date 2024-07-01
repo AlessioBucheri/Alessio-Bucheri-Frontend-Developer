@@ -71,6 +71,8 @@ export const ProjectButton = styled.a`
   text-decoration: none;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.4s ease;
+  position: relative;
+  overflow: hidden;
 
   &:hover {
     transform: scale(1.1);
@@ -79,24 +81,23 @@ export const ProjectButton = styled.a`
 
   .btn-fill {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: #F63E02;
     border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
+    transform: scale(0);
     transition: transform 0.8s ease;
     z-index: 0;
   }
 
   &:hover .btn-fill {
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
   }
 
   .btn-text {
     position: relative;
-    line-height: 2;
     z-index: 1;
   }
 `;
