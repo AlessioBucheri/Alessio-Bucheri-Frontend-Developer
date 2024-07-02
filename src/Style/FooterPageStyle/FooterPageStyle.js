@@ -29,7 +29,8 @@ export const FooterHeader = styled.h1`
 export const FooterText = styled.div`
   align-self: flex-start;
   text-align: center;
-
+  overflow: hidden;
+  
   h1 {
     font-size: 10vw;
     padding: 20px;
