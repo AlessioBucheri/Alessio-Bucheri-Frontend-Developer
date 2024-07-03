@@ -1,6 +1,14 @@
 import styled from "styled-components";
 import { animated } from "react-spring";
 
+export const Section = styled(animated.div)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+`;
+
 export const AboutMeContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -87,7 +95,7 @@ export const PresentationText = styled.p`
 
 export const HobbyContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #FBFBFF;

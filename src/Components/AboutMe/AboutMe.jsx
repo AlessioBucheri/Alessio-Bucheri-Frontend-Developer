@@ -82,7 +82,7 @@ export default function AboutMe() {
         </S.PresentationContainer>
       </Section>
       <hr />
-      <Section index={1}>
+      <S.Section index={1}>
         <S.HobbyContainer>
           <S.HobbyTitle>My hobby</S.HobbyTitle>
           <S.PresentationText>
@@ -95,9 +95,9 @@ export default function AboutMe() {
             play on my phone.
           </S.PresentationText>
         </S.HobbyContainer>
-      </Section>
+      </S.Section>
       <hr />
-      <Section index={2}>
+      <S.Section index={2}>
         <S.SkillsContainer>
           <S.SkillsTitle>Skills</S.SkillsTitle>
           {skills.map((skill, index) => (
@@ -109,7 +109,7 @@ export default function AboutMe() {
             />
           ))}
         </S.SkillsContainer>
-      </Section>
+      </S.Section>
     </S.AboutMeContainer>
   );
 }
