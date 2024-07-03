@@ -137,12 +137,6 @@ export const SkillsTitle = styled.h3`
     margin-bottom: 40px;
 `;
 
-export const SkillsText = styled.p`
-    font-size: 2vw;
-    line-height: 1.5;
-    color: #F63E02;
-`;
-
 export const SkillBarContainer = styled.div`
     margin-bottom: 10px;
 `;
@@ -151,17 +145,20 @@ export const SkillBarName = styled.span`
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    font-size: 1.5vw;
+    line-height: 1.5;
 `;
 
 export const SkillBarTrack = styled.div`
-    width: 300px;
-    background-color: #e0e0e0;
+    width: 500px;
+    background-color: #39393A;
+    border: #39393A 1px solid;
     border-radius: 20px;
     overflow: hidden;
 `;
 
 export const SkillBarFill = styled(animated.div)`
     height: 20px;
-    background-color: #3b82f6;
+    background-color: #FDB833;
     border-radius: 20px 0 0 20px;
 `;
