@@ -68,7 +68,7 @@ export default function AboutMe() {
       <Section index={0}>
         <S.PresentationContainer>
           <S.PresentationImage
-            src='/AboutMeImage/presentationImage.jpg'
+            src='/AboutMeImage/presentationImage.svg'
             alt='my profile picture'
           />
           <S.PresentationInner>
@@ -84,16 +84,17 @@ export default function AboutMe() {
       <hr />
       <S.Section index={1}>
         <S.HobbyContainer>
-          <S.HobbyTitle>My hobby</S.HobbyTitle>
-          <S.PresentationText>
-            I love to play video games, my favorite games are the ones that I
-            play on my phone.
-          </S.PresentationText>
+          <S.HobbyTitle>Hobbies</S.HobbyTitle>
+          <S.HobbyText>
+            Passion for Video Games Since childhood, I have been passionate
+            about video games. This passion has shaped me into a highly
+            competitive individual who always strives for perfection and
+            consistently achieves my goals. Gaming serves as both an escape from
+            reality and a means of relaxation. I firmly believe that the skills
+            and mindset developed through gaming are valuable in both private
+            and professional life.
+          </S.HobbyText>
           <img src='/HobbyImage/hobbyImage.jpg' alt='my hobby' />
-          <S.PresentationText>
-            I love to play video games, my favorite games are the ones that I
-            play on my phone.
-          </S.PresentationText>
         </S.HobbyContainer>
       </S.Section>
       <hr />

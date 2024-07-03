@@ -56,7 +56,7 @@ export default function ContactMe() {
           <input
             type='email'
             name='user_email'
-            placeholder='alessio.j.1993@gmail.com'
+            placeholder='alessiobucheri.dev@gmail.com'
             required
           />
           <hr />

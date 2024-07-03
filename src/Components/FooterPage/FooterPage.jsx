@@ -18,7 +18,9 @@ export default function ContactPage() {
       <FooterText>
         <h1>Get in touch!</h1>
         <FooterEmail>
-          <a href='mailto:hello@danmachado.com'>alessio.j.1993@gmail.com</a>
+          <a href='mailto:alessiobucheri.dev@gmail.com'>
+            alessiobucheri.dev@gmail.com
+          </a>
         </FooterEmail>
       </FooterText>
       <FooterSocial>

@@ -40,8 +40,8 @@ export const PresentationContainer = styled.div`
 `;
 
 export const PresentationImage = styled.img`
-    padding: 40px;
     width: 800px;
+    height: 400px;
 
     @media (max-width: 768px) {
         width: 60vw;
@@ -78,6 +78,7 @@ export const AboutMeText = styled.h1`
 `;
 
 export const PresentationText = styled.p`
+    padding: 40px;
     font-size: 2vw;
     line-height: 1.5;
     color: #F63E02;
@@ -108,10 +109,11 @@ export const HobbyTitle = styled.h3`
     font-size: 4vw;
     line-height: 1.5;
     color: #F63E02;
-    margin-bottom: 40px;
 `;
 
 export const HobbyText = styled.p`
+    padding: 40px;
+    text-align: center;
     font-size: 2vw;
     line-height: 1.5;
     color: #F63E02;
