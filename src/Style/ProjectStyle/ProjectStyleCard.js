@@ -9,7 +9,7 @@ export const ProjectCardContainer = styled.div`
     overflow: hidden;
     padding: 40px;
     font-family: 'Copenhagen';
-    background-color: aliceblue;
+    background-color: #FBFBFF;
     border-radius: 30px;
     margin: 20px;
 
