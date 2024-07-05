@@ -1,14 +1,6 @@
 import styled from "styled-components";
 import { animated } from "react-spring";
 
-export const Section = styled(animated.div)`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-`;
-
 export const AboutMeContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -16,7 +8,6 @@ export const AboutMeContainer = styled.div`
     justify-content: center;
     background-color: #39393A;
     color: #F63E02;
-    width: 100%; /* Aggiungi larghezza del 100% */
 
     hr {
         width: 80%;
@@ -30,9 +21,11 @@ export const PresentationContainer = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #FBFBFF;
-    width: 100%;
-    margin-top: 150px;
     overflow: hidden;
+    margin: 20px;
+    margin-top: 150px;
+    border-radius: 30px;
+
 
     @media (max-width: 768px) {
         flex-direction: column;
@@ -100,9 +93,10 @@ export const HobbyContainer = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #FBFBFF;
-    width: 100%; /* Assicurati che sia al 100% */
     height: 400px;
     overflow: hidden;
+    margin: 20px;
+    border-radius: 30px;
 `;
 
 export const HobbyTitle = styled.h3`
@@ -125,12 +119,9 @@ export const SkillsContainer = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #FBFBFF;
-    width: 100%; /* Assicurati che sia al 100% */
-    height: 500px;
-    overflow: hidden;
-    padding: 0; /* Rimuovi padding */
-    margin: 0; /* Rimuovi margini */
-`;
+    margin: 20px;
+    border-radius: 30px;
+    `;
 
 export const SkillsTitle = styled.h3`
     font-size: 4vw;
@@ -145,14 +136,14 @@ export const SkillBarContainer = styled.div`
 
 export const SkillBarName = styled.span`
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: bold;
     font-size: 1.5vw;
     line-height: 1.5;
 `;
 
 export const SkillBarTrack = styled.div`
-    width: 500px;
+    width: 50vw;
     background-color: #39393A;
     border: #39393A 1px solid;
     border-radius: 20px;

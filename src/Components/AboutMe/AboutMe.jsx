@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import * as S from "../../Style/AboutMeStyle/AboutMeStyle";
+import { useSkillBar } from "../../Hooks/AboutMePageHooks/useSkillBar";
+import { useInView } from "react-intersection-observer";
 
 const skills = [
   { name: "HTML", level: 90 },
@@ -9,34 +10,6 @@ const skills = [
   { name: "JavaScript", level: 75 },
   { name: "React", level: 80 },
 ];
-
-const SkillBar = ({ name, level, index }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const variants = {
-    hidden: { width: "0%" },
-    visible: { width: `${level}%` },
-  };
-
-  return (
-    <S.SkillBarContainer>
-      <S.SkillBarName>{name}</S.SkillBarName>
-      <S.SkillBarTrack>
-        <S.SkillBarFill
-          as={motion.div}
-          ref={ref}
-          initial='hidden'
-          animate={inView ? "visible" : "hidden"}
-          variants={variants}
-          transition={{ duration: 1 }}
-        />
-      </S.SkillBarTrack>
-    </S.SkillBarContainer>
-  );
-};
 
 const Section = ({ children, index }) => {
   const [ref, inView] = useInView({
@@ -56,6 +29,7 @@ const Section = ({ children, index }) => {
       animate={inView ? "visible" : "hidden"}
       variants={variants}
       transition={{ duration: 0.5, delay: index * 0.2 }}
+      style={{ width: "100%" }}
     >
       {children}
     </motion.div>
@@ -82,7 +56,7 @@ export default function AboutMe() {
         </S.PresentationContainer>
       </Section>
       <hr />
-      <S.Section index={1}>
+      <Section index={1}>
         <S.HobbyContainer>
           <S.HobbyTitle>Hobbies</S.HobbyTitle>
           <S.HobbyText>
@@ -94,23 +68,35 @@ export default function AboutMe() {
             and mindset developed through gaming are valuable in both private
             and professional life.
           </S.HobbyText>
-          <img src='/HobbyImage/hobbyImage.jpg' alt='my hobby' />
         </S.HobbyContainer>
-      </S.Section>
+      </Section>
       <hr />
-      <S.Section index={2}>
+      <Section index={2}>
         <S.SkillsContainer>
           <S.SkillsTitle>Skills</S.SkillsTitle>
-          {skills.map((skill, index) => (
-            <SkillBar
-              key={index}
-              name={skill.name}
-              level={skill.level}
-              index={index}
-            />
-          ))}
+          {skills.map((skill, index) => {
+            const { ref, inView, variants, motion } = useSkillBar(skill.level);
+
+            return (
+              <S.SkillBarContainer key={index}>
+                <S.SkillBarName>{skill.name}</S.SkillBarName>
+                <S.SkillBarTrack>
+                  <motion.div
+                    ref={ref}
+                    initial='hidden'
+                    animate={inView ? "visible" : "hidden"}
+                    variants={variants}
+                    transition={{ duration: 1 }}
+                    style={{ width: "100%" }}
+                  >
+                    <S.SkillBarFill />
+                  </motion.div>
+                </S.SkillBarTrack>
+              </S.SkillBarContainer>
+            );
+          })}
         </S.SkillsContainer>
-      </S.Section>
+      </Section>
     </S.AboutMeContainer>
   );
 }
