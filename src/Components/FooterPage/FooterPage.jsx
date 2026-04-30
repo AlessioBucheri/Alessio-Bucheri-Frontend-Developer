@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FooterContainer,
   FooterHeader,
@@ -7,8 +6,11 @@ import {
   FooterSocial,
   FooterSocialLink,
 } from "../../Style/FooterPageStyle/FooterPageStyle";
+import resumeData from "../../Database/resumeData";
 
-export default function ContactPage() {
+export default function FooterPage() {
+  const { profile } = resumeData;
+
   return (
     <FooterContainer>
       <FooterHeader>
@@ -18,15 +20,13 @@ export default function ContactPage() {
       <FooterText>
         <h1>Get in touch!</h1>
         <FooterEmail>
-          <a href='mailto:alessiobucheri.dev@gmail.com'>
-            alessiobucheri.dev@gmail.com
-          </a>
+          <a href={`mailto:${profile.email}`}>{profile.email}</a>
         </FooterEmail>
       </FooterText>
       <FooterSocial>
         <FooterSocialLink
           className='contact-linkedin'
-          href='https://www.linkedin.com/in/alessio-bucheri-462721214/'
+          href={profile.linkedin}
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -35,7 +35,7 @@ export default function ContactPage() {
         </FooterSocialLink>
         <FooterSocialLink
           id='contact-github'
-          href='https://github.com/AlessioBucheri'
+          href={profile.github}
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -44,7 +44,7 @@ export default function ContactPage() {
         </FooterSocialLink>
         <FooterSocialLink
           id='contact-instagram'
-          href='https://www.instagram.com/alexbucheri/'
+          href='https://www.instagram.com/alessiobucheri/'
           target='_blank'
           rel='noopener noreferrer'
         >

@@ -1,23 +1,34 @@
-import React from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 import WaveTransition from "../../Hooks/WaveTransition/WaveTransition";
 
 import HomePage from "../../Components/HomePage/HomePage";
-import IntroductionPage from "../../Components/IntroductionPage/IntroductionPage";
-import FooterPage from "../../Components/FooterPage/FooterPage";
+
 export default function LandingPage() {
+  useEffect(() => {
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+    };
+  }, []);
+
   return (
     <WaveTransition>
-      <HelmetProvider>
-        <Helmet>
-          <title>Alessio Bucheri - Frontend Developer</title>
-          <meta name='landing page' content='Welcome to my portfolio!' />
-        </Helmet>
-      </HelmetProvider>
+      <Helmet>
+        <title>Alessio Bucheri - Frontend Developer</title>
+        <meta
+          name='description'
+          content='Frontend portfolio di Alessio Bucheri con progetti, presentazione e contatti.'
+        />
+      </Helmet>
       <HomePage />
-      <IntroductionPage />
-      <FooterPage />
     </WaveTransition>
   );
 }

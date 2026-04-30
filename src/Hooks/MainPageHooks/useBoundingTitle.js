@@ -30,5 +30,12 @@ export default function useBoundingTitle() {
     titleRef.current.style.setProperty("--mouse-y", `${y / 5}px`);
   };
 
-  return { titleRef, handleMouseMove };
+  const handleMouseLeave = () => {
+    if (!titleRef.current) return;
+
+    titleRef.current.style.setProperty("--mouse-x", "0px");
+    titleRef.current.style.setProperty("--mouse-y", "0px");
+  };
+
+  return { titleRef, handleMouseMove, handleMouseLeave };
 }

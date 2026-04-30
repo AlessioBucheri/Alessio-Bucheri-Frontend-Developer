@@ -2,23 +2,26 @@ import { useEffect } from "react";
 
 const useMagneticButton = (ref, strength = 0.5) => {
   useEffect(() => {
+    const button = ref.current;
+
+    if (!button) {
+      return undefined;
+    }
+
     const handleMouseMove = (e) => {
-      const button = ref.current;
       const rect = button.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
 
-      button.style.transform = `translate(${x * strength}px, ${
-        y * strength
-      }px)`;
+      button.style.setProperty("--magnetic-x", `${x * strength}px`);
+      button.style.setProperty("--magnetic-y", `${y * strength}px`);
     };
 
     const handleMouseLeave = () => {
-      const button = ref.current;
-      button.style.transform = "translate(0, 0)";
+      button.style.setProperty("--magnetic-x", "0px");
+      button.style.setProperty("--magnetic-y", "0px");
     };
 
-    const button = ref.current;
     button.style.transition = "transform 0.2s ease-out";
     button.addEventListener("mousemove", handleMouseMove);
     button.addEventListener("mouseleave", handleMouseLeave);

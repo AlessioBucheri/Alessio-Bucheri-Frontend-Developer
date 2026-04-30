@@ -1,4 +1,3 @@
-import React from "react";
 import Slider from "react-slick";
 import projectsData from "../../Database/projectsData";
 import ProjectCard from "./ProjectCard";
@@ -14,25 +13,53 @@ export default function Project() {
     autoplaySpeed: 2000,
     speed: 2000,
     cssEase: "linear",
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   return (
     <ProjectContainer>
-      <h1>Project Page</h1>
-      <h3>These are some of the projects I have worked on</h3>
+      <h1>Selected Projects</h1>
+      <h3>
+        A curated selection of projects where I focused on interfaces,
+        interaction, APIs and practical product thinking.
+      </h3>
       <div className='projects-grid'>
         {projectsData.map((project, index) => (
           <ProjectCard
             key={project.id}
             title={project.title}
+            headline={project.headline}
+            project={project.project}
+            technologies={project.technologies}
             description={project.description}
+            challenge={project.challenge}
             link={project.link}
             image={project.image}
             index={index}
           />
         ))}
       </div>
-      <h4>Technologies used</h4>
+      <h4>Technologies I Use</h4>
       <Slider {...settings} className='slider'>
         <div className='container'>
           <img src='/SliderImage/html.png' alt='HTML logo' />

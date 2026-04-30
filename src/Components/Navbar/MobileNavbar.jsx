@@ -1,5 +1,3 @@
-import React from "react";
-
 const MobileNavbar = () => {
   return (
     <div className='mobile-navbar'>

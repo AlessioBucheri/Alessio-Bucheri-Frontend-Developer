@@ -1,0 +1,68 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="36" fill="#F8F6FF"/>
+  <rect width="1600" height="118" fill="#7563A7"/>
+  <rect x="1328" y="24" width="224" height="62" rx="31" fill="#FBFBFF"/>
+  <text x="77" y="64" fill="#FBFBFF" font-size="26" font-family="Arial, sans-serif" font-weight="600">Psicologa Clinica</text>
+  <text x="77" y="92" fill="#FBFBFF" font-size="28" font-family="Arial, sans-serif">Silvia Quondamstefano</text>
+  <text x="1128" y="67" fill="#FBFBFF" font-size="22" font-family="Arial, sans-serif" font-weight="600">Chi sono</text>
+  <text x="1260" y="67" fill="#FBFBFF" font-size="22" font-family="Arial, sans-serif" font-weight="600">Aree</text>
+  <text x="1360" y="67" fill="#FBFBFF" font-size="22" font-family="Arial, sans-serif" font-weight="600">Studio</text>
+  <text x="1448" y="67" fill="#FBFBFF" font-size="22" font-family="Arial, sans-serif" font-weight="600">Contatti</text>
+  <text x="1362" y="63" fill="#7563A7" font-size="22" font-family="Arial, sans-serif" font-weight="700">Prendi un appuntamento</text>
+
+  <circle cx="44" cy="55" r="22" fill="#A5D6FF"/>
+  <circle cx="57" cy="45" r="13" fill="#FFD469"/>
+  <path d="M17 73C34 55 51 55 68 73" stroke="#FF8A65" stroke-width="10" stroke-linecap="round"/>
+  <path d="M21 77C36 61 49 61 64 77" stroke="#FFE45C" stroke-width="10" stroke-linecap="round"/>
+  <path d="M25 81C38 67 47 67 60 81" stroke="#8EE88C" stroke-width="10" stroke-linecap="round"/>
+  <path d="M29 85C40 73 45 73 56 85" stroke="#76D5FF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M33 89C42 79 43 79 52 89" stroke="#8B7BFF" stroke-width="10" stroke-linecap="round"/>
+
+  <text x="110" y="408" fill="#6F5CA5" font-size="76" font-family="Arial, sans-serif" font-weight="700">Psicologa e</text>
+  <text x="110" y="500" fill="#6F5CA5" font-size="76" font-family="Arial, sans-serif" font-weight="700">Psicoterapeuta a Roma</text>
+  <text x="110" y="618" fill="#7F73B4" font-size="28" font-family="Arial, sans-serif">"In ogni caos c'e un cosmo, in ogni disordine un ordine segreto"</text>
+  <text x="425" y="662" fill="#7F73B4" font-size="28" font-family="Arial, sans-serif" font-style="italic">Carl Gustav Jung</text>
+
+  <rect x="120" y="734" width="218" height="60" rx="30" fill="#7563A7"/>
+  <rect x="360" y="734" width="192" height="60" rx="30" fill="#7563A7"/>
+  <rect x="572" y="734" width="212" height="60" rx="30" fill="#7563A7"/>
+  <text x="160" y="772" fill="#FBFBFF" font-size="24" font-family="Arial, sans-serif">Terapia individuale</text>
+  <text x="433" y="772" fill="#FBFBFF" font-size="24" font-family="Arial, sans-serif">Adulti</text>
+  <text x="621" y="772" fill="#FBFBFF" font-size="24" font-family="Arial, sans-serif">Adolescenti</text>
+
+  <ellipse cx="1260" cy="602" rx="360" ry="250" transform="rotate(-18 1260 602)" fill="#7563A7"/>
+  <circle cx="1330" cy="420" r="100" fill="#FFD86F"/>
+  <g stroke="#FFD86F" stroke-linecap="round" stroke-width="14">
+    <line x1="1330" y1="264" x2="1330" y2="218"/>
+    <line x1="1446" y1="300" x2="1478" y2="268"/>
+    <line x1="1494" y1="414" x2="1540" y2="414"/>
+    <line x1="1454" y1="526" x2="1488" y2="558"/>
+    <line x1="1328" y1="574" x2="1328" y2="620"/>
+    <line x1="1216" y1="524" x2="1182" y2="558"/>
+    <line x1="1164" y1="414" x2="1118" y2="414"/>
+    <line x1="1210" y1="300" x2="1178" y2="268"/>
+  </g>
+
+  <path d="M1090 640C1155 532 1222 470 1290 452C1364 432 1430 452 1492 522" stroke="#D76666" stroke-width="28" stroke-linecap="round"/>
+  <path d="M1112 654C1174 548 1236 492 1297 476C1362 458 1420 476 1478 542" stroke="#F5B87A" stroke-width="28" stroke-linecap="round"/>
+  <path d="M1132 672C1190 570 1245 516 1301 500C1359 484 1414 498 1464 558" stroke="#F3E96A" stroke-width="28" stroke-linecap="round"/>
+  <path d="M1154 690C1208 594 1258 544 1305 528C1353 512 1402 520 1450 578" stroke="#9DDB78" stroke-width="28" stroke-linecap="round"/>
+  <path d="M1176 712C1224 626 1268 580 1308 566C1348 552 1389 556 1434 604" stroke="#84D9FF" stroke-width="28" stroke-linecap="round"/>
+  <path d="M1198 732C1238 658 1278 618 1310 604C1340 592 1376 592 1416 632" stroke="#8FC6FF" stroke-width="28" stroke-linecap="round"/>
+  <path d="M1220 752C1252 694 1286 660 1312 648C1334 638 1360 638 1390 668" stroke="#8B7BFF" stroke-width="28" stroke-linecap="round"/>
+
+  <g fill="#D5EAFF">
+    <circle cx="1268" cy="534" r="84"/>
+    <circle cx="1344" cy="540" r="98"/>
+    <circle cx="1428" cy="552" r="78"/>
+    <rect x="1214" y="552" width="292" height="84" rx="42"/>
+  </g>
+
+  <g fill="#D5EAFF">
+    <path d="M1338 694C1350 708 1350 734 1338 748C1326 734 1326 708 1338 694Z"/>
+    <path d="M1388 716C1400 730 1400 756 1388 770C1376 756 1376 730 1388 716Z"/>
+    <path d="M1440 694C1452 708 1452 734 1440 748C1428 734 1428 708 1440 694Z"/>
+    <path d="M1366 760C1378 774 1378 800 1366 814C1354 800 1354 774 1366 760Z"/>
+    <path d="M1418 776C1430 790 1430 816 1418 830C1406 816 1406 790 1418 776Z"/>
+  </g>
+</svg>

@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import { motion, useAnimation } from "framer-motion";
 
 const AnimatedElement = ({ children, visible, index }) => {
@@ -24,6 +25,12 @@ const AnimatedElement = ({ children, visible, index }) => {
       {children}
     </motion.div>
   );
+};
+
+AnimatedElement.propTypes = {
+  children: PropTypes.node.isRequired,
+  visible: PropTypes.bool.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default AnimatedElement;

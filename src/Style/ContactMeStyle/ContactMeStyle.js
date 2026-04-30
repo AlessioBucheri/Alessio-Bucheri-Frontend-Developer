@@ -23,36 +23,47 @@ const slideDown = keyframes`
 `;
 
 export const ContactContainer = styled.div`
-  background-color: #39393A;
-  color: #F63E02;
-  margin-top: 100px;
+  background: var(--color-bg);
+  color: var(--color-accent);
 `;
 
 export const ContactContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #39393A;
-  color: #F63E02;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: transparent;
+  color: var(--color-accent);
   font-size: 2rem;
-  padding: 40px;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding: clamp(112px, 12vw, 136px) clamp(20px, 4vw, 48px) 88px;
 
   h1 {
     align-self: flex-start;
-    font-size: 8vw;
-    padding: 10px;
-    margin-bottom: 60px;
-    animation: ${slideIn} 2s ease-out;
+    max-width: none;
+    width: 100%;
+    font-size: clamp(1.9rem, 3.1vw, 2.95rem);
+    line-height: 0.94;
+    letter-spacing: -0.06em;
+    padding: 0;
+    margin-bottom: 34px;
+    font-family: "Copenhagen-Bold";
+    white-space: nowrap;
+    animation: ${slideIn} 1s ease-out;
   }
 
   .animate {
-    animation: ${slideIn} 2s ease-out;
+    animation: ${slideIn} 1s ease-out;
   }
 
   @media (max-width: 768px) {
+    padding: 108px 16px 72px;
+
     h1 {
-      align-self: center;
+      max-width: 11ch;
+      white-space: normal;
+      text-align: left;
     }
   }
 `;
@@ -60,21 +71,32 @@ export const ContactContent = styled.div`
 export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   align-self: flex-start;
-  background-color: #39393A;
-  color: #F63E02;
-  font-size: 2rem;
-  padding: 40px;
+  width: min(840px, 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(251, 251, 255, 0.99),
+    rgba(251, 251, 255, 0.96)
+  );
+  color: var(--color-text);
+  font-size: 1rem;
+  padding: clamp(24px, 3vw, 38px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
   animation: ${slideDown} 1s ease-out;
 
   label {
-    font-size: 5vw;
+    font-size: clamp(0.84rem, 0.74rem + 0.2vw, 0.96rem);
     align-self: flex-start;
-    padding: 10px;
-    margin-bottom: 40px;
-    font-family: 'Copenhagen';
+    padding: 0 0 8px;
+    margin-bottom: 0;
+    font-family: "Copenhagen-Bold";
     animation: ${slideDown} 1s ease-out;
+    color: var(--color-text);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
   input {
@@ -87,30 +109,40 @@ export const ContactForm = styled.form`
     border: 0;
     outline: 0;
     background: transparent;
-    font-size: 3vw;
-    padding: 10px;
+    font-size: clamp(0.98rem, 0.8rem + 0.32vw, 1.08rem);
+    padding: 6px 0 16px;
     background: transparent !important;
     align-self: start;
-    margin-bottom: 40px;
+    margin-bottom: 16px;
     width: 100%;
-    font-family: 'Copenhagen';
-    color: #FBFBFF;
-    line-height: 2;
+    font-family: "Copenhagen";
+    color: var(--color-text-soft);
+    line-height: 1.72;
     animation: ${slideDown} 1s ease-out;
+    transition: color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      box-shadow: inset 0 -2px 0 var(--color-accent);
+      color: var(--color-text);
+    }
 
     &::placeholder {
-        color: grey;
-        height: 70px;
+      color: rgba(98, 94, 87, 0.58);
+      height: auto;
     }
   }
 
   hr {
     width: 100%;
     height: 1px;
-    background-color: #FBFBFF;
+    background-color: rgba(57, 57, 58, 0.1);
     border: none;
-    margin-bottom: 40px;
+    margin-bottom: 18px;
     animation: ${slideDown} 1s ease-out;
+  }
+
+  hr:first-of-type {
+    display: none;
   }
 
   textarea {
@@ -123,33 +155,41 @@ export const ContactForm = styled.form`
     border: 0;
     outline: 0;
     background: transparent;
-    font-size: 3vw;
+    font-size: clamp(0.98rem, 0.8rem + 0.32vw, 1.08rem);
     background: transparent !important;
     align-self: start;
-    padding: 10px;
-    margin-bottom: 40px;
+    padding: 6px 0 16px;
+    margin-bottom: 16px;
     width: 100%;
-    font-family: 'Copenhagen';
-    color: #FBFBFF;
+    font-family: "Copenhagen";
+    color: var(--color-text-soft);
     resize: none;
-    height: 5em;
+    min-height: 8.5em;
+    line-height: 1.72;
     animation: ${slideDown} 1s ease-out;
+    transition: color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      box-shadow: inset 0 -2px 0 var(--color-accent);
+      color: var(--color-text);
+    }
 
     &::placeholder {
-        color: grey;
+      color: rgba(98, 94, 87, 0.58);
     }
   }
 `;
 
 export const ContactButton = styled.button`
-  background-color: #FBFBFF;
+  align-self: flex-end;
+  background-color: var(--color-text);
   border-radius: 50%;
   border: none;
-  color: #39393A;
-  width: 15vw;
-  height: 15vw;
-  line-height: 76px;
-  font-size: 1.5rem;
+  color: var(--color-surface);
+  width: clamp(98px, 12vw, 126px);
+  height: clamp(98px, 12vw, 126px);
+  line-height: 1;
+  font-size: 0.9rem;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -157,10 +197,22 @@ export const ContactButton = styled.button`
   overflow: hidden;
   transition: transform 0.3s ease, opacity 0.4s ease;
   animation: ${slideDown} 1s ease-out;
+  --magnetic-x: 0px;
+  --magnetic-y: 0px;
+  --button-scale: 1;
+  transform: translate(var(--magnetic-x), var(--magnetic-y))
+    scale(var(--button-scale));
+  margin-top: 6px;
+  box-shadow: 0 18px 36px rgba(18, 18, 20, 0.16);
 
   &:hover {
-    transform: scale(1.1);
-    color: #FBFBFF;
+    --button-scale: 1.06;
+    color: var(--color-surface);
+  }
+
+  &:disabled {
+    cursor: wait;
+    opacity: 0.8;
   }
 
   .btn-fill {
@@ -169,7 +221,7 @@ export const ContactButton = styled.button`
     left: 50%;
     width: 200%;
     height: 200%;
-    background-color: #F63E02;
+    background-color: var(--color-accent);
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: transform 0.8s ease;
@@ -182,16 +234,25 @@ export const ContactButton = styled.button`
 
   .btn-text {
     position: relative;
-    line-height: 6;
+    line-height: 1.1;
     z-index: 1;
-    font-family: 'Copenhagen';
-    font-size: 2vw;
+    font-family: "Copenhagen";
+    font-size: clamp(0.72rem, 0.64rem + 0.2vw, 0.82rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    align-self: center;
   }
 `;
 
 export const ConfirmationMessage = styled.p`
-  color: #FBFBFF;
-  font-size: 1rem;
-  margin-top: 20px;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  margin-top: 24px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(251, 251, 255, 0.94);
   animation: ${slideDown} 1s ease-out;
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import { Suspense, lazy } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,11 +7,12 @@ import {
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
-import LandingPage from "./Pages/LandingPage/LandingPage";
-import AboutPage from "./Pages/AboutPage/AboutPage";
-import ProjectsPage from "./Pages/ProjectsPage/ProjectsPage";
-import ContactPage from "./Pages/ContactPage/ContactPage";
 import "./App.css";
+
+const LandingPage = lazy(() => import("./Pages/LandingPage/LandingPage"));
+const AboutPage = lazy(() => import("./Pages/AboutPage/AboutPage"));
+const ProjectsPage = lazy(() => import("./Pages/ProjectsPage/ProjectsPage"));
+const ContactPage = lazy(() => import("./Pages/ContactPage/ContactPage"));
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function MainRoutes() {
   const location = useLocation();
 
   return (
-    <>
+    <Suspense fallback={<div className='route-fallback' aria-hidden='true' />}>
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>
           <Route path='/' element={<LandingPage />} />
@@ -34,7 +35,7 @@ function MainRoutes() {
           <Route path='/contact' element={<ContactPage />} />
         </Routes>
       </AnimatePresence>
-    </>
+    </Suspense>
   );
 }
 

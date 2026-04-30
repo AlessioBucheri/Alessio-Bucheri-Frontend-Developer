@@ -12,7 +12,7 @@ export const AboutContent = styled.div`
   line-height: 1.5;
   text-align: center;
   color: #F63E02;
-  background-color: #FBFBFF;
+  background-color: var(--color-surface);
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -54,14 +54,15 @@ export const ProjectButtonContainer = styled.div`
   height: auto;
   padding: 40px;
   overflow: hidden; 
-  background-color: #FBFBFF;
+  background-color: var(--color-surface);
   border-radius: 50%;
 `;
 
-export const ProjectButton = styled.a`
+export const ProjectButton = styled.button`
   background-color: #39393A;
   border-radius: 50%;
-  color: #FBFBFF;
+  border: none;
+  color: var(--color-surface);
   width: 150px;
   height: 150px;
   display: flex;
@@ -73,10 +74,16 @@ export const ProjectButton = styled.a`
   transition: transform 0.3s ease, opacity 0.4s ease;
   position: relative;
   overflow: hidden;
+  font: inherit;
+  --magnetic-x: 0px;
+  --magnetic-y: 0px;
+  --button-scale: 1;
+  transform: translate(var(--magnetic-x), var(--magnetic-y))
+    scale(var(--button-scale));
 
   &:hover {
-    transform: scale(1.1);
-    color: #FBFBFF;
+    --button-scale: 1.1;
+    color: var(--color-surface);
   }
 
   .btn-fill {

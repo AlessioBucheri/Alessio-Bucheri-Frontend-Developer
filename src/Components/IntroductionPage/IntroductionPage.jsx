@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   AboutContent,
@@ -10,7 +10,7 @@ import AnimatedElement from "../../Hooks/AboutPageHooks/AnimatedElement.jsx";
 import useScrollVisibility from "../../Hooks/AboutPageHooks/useScrollVisibility.jsx";
 import useMagneticButton from "../../Hooks/AboutPageHooks/useMagneticButton.jsx";
 
-export default function AboutPage() {
+export default function IntroductionPage() {
   const [ref1, isVisible1] = useScrollVisibility(0.3);
   const [ref2, isVisible2] = useScrollVisibility(0.3);
   const buttonRef = useRef(null);
@@ -42,9 +42,9 @@ export default function AboutPage() {
         </h2>
         <AnimatedElement visible={isVisible2} index={2}>
           <ProjectButtonContainer>
-            <ProjectButton ref={buttonRef} onClick={handleButtonClick}>
+            <ProjectButton ref={buttonRef} type='button' onClick={handleButtonClick}>
               <div className='btn-fill'></div>
-              <div className='btn-text'>Project</div>
+              <div className='btn-text'>Projects</div>
             </ProjectButton>
           </ProjectButtonContainer>
         </AnimatedElement>

@@ -5,6 +5,7 @@ const useScrollVisibility = (threshold = 0.3) => {
   const ref = useRef(null);
 
   useEffect(() => {
+    const currentElement = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
@@ -14,13 +15,13 @@ const useScrollVisibility = (threshold = 0.3) => {
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [threshold]);

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import useMagneticButton from "../../Hooks/AboutPageHooks/useMagneticButton.jsx";
 
@@ -14,11 +14,19 @@ export default function ContactMe() {
   const form = useRef();
   const buttonRef = useRef(null);
   const [confirmation, setConfirmation] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
-  useMagneticButton(buttonRef, 0.5); // Applicare l'effetto magnetico
+  useMagneticButton(buttonRef, 0.5);
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (!form.current || isSending) {
+      return;
+    }
+
+    setConfirmation("");
+    setIsSending(true);
 
     emailjs
       .sendForm("service_qa87gth", "template_l2aqchu", form.current, {
@@ -29,11 +37,13 @@ export default function ContactMe() {
           setConfirmation("Your message has been sent!");
           form.current.reset(); // Resetta il form
         },
-        (error) => {
+        () => {
           setConfirmation("Failed to send message, please try again.");
-          console.log("FAILED...", error.text);
         }
-      );
+      )
+      .finally(() => {
+        setIsSending(false);
+      });
   };
 
   return (
@@ -44,36 +54,38 @@ export default function ContactMe() {
         </h1>
         <ContactForm ref={form} onSubmit={sendEmail}>
           <hr />
-          <label>1. What's your name?</label>
+          <label>Name</label>
           <input
             type='text'
             name='user_name'
-            placeholder='Alessio Bucheri'
+            placeholder='Your name'
             required
           />
           <hr />
-          <label>2. What's your email?</label>
+          <label>Email</label>
           <input
             type='email'
             name='user_email'
-            placeholder='alessiobucheri.dev@gmail.com'
+            placeholder='name@example.com'
             required
           />
           <hr />
-          <label>3. Your message</label>
+          <label>Message</label>
           <textarea
             name='message'
-            placeholder="Hi, I'm interested in your project..."
+            placeholder='Tell me about your project, role or collaboration idea.'
             required
           />
           <hr />
-          <ContactButton ref={buttonRef} type='submit'>
+          <ContactButton ref={buttonRef} type='submit' disabled={isSending}>
             <div className='btn-fill'></div>
-            <div className='btn-text'>Send!</div>
+            <div className='btn-text'>{isSending ? "Sending..." : "Send"}</div>
           </ContactButton>
         </ContactForm>
         {confirmation && (
-          <ConfirmationMessage>{confirmation}</ConfirmationMessage>
+          <ConfirmationMessage aria-live='polite'>
+            {confirmation}
+          </ConfirmationMessage>
         )}
       </ContactContent>
     </ContactContainer>

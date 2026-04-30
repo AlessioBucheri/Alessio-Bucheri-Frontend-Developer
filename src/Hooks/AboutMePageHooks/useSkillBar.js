@@ -1,6 +1,4 @@
-
 import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
 
 export const useSkillBar = (level) => {
   const [ref, inView] = useInView({
@@ -13,5 +11,5 @@ export const useSkillBar = (level) => {
     visible: { width: `${level}%` },
   };
 
-  return { ref, inView, variants, motion };
+  return { ref, inView, variants };
 };

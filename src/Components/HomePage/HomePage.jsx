@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../../Components/Navbar/Navbar.jsx";
 import useGlobeSpin from "../../Hooks/MainPageHooks/useGlobeSpin.js";
 import * as S from "../../Style/HomePageStyle/HomePageStyle.js";
@@ -12,19 +11,22 @@ export default function HomePage() {
       <S.Container>
         <S.From onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <p>Located in Italy, Rome</p>
-          <i className='fas fa-globe' ref={globeRef}></i>
+          <img
+            className='globe-icon'
+            src='/PlanetIcon.svg'
+            alt=''
+            aria-hidden='true'
+            ref={globeRef}
+          />
         </S.From>
         <S.Introduction>
-          <span className='material-symbols-outlined'>south_east </span>
-          <h1>Frontend Developer</h1>
+          <span className='material-symbols-outlined'>south_west </span>
+          <h1>Fullstack Developer</h1>
         </S.Introduction>
       </S.Container>
       <S.NameScroller>
         <S.StageAnimation>
-          <p>Alessio Bucheri — </p>
-        </S.StageAnimation>
-        <S.StageAnimation>
-          <p>Alessio Bucheri — </p>
+          <p>Alessio Bucheri - Fullstack Developer</p>
         </S.StageAnimation>
       </S.NameScroller>
     </S.HomePageContent>

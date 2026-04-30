@@ -1,15 +1,15 @@
 .wave-container {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    will-change: clip-path;
+    background-color: transparent;
 }
 
 .wave-background {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    will-change: transform, opacity, filter;
 }
