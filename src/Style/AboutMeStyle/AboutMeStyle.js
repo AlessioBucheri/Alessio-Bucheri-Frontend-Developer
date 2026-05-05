@@ -9,6 +9,8 @@ export const AboutMeContainer = styled.div`
   background: var(--color-bg);
   color: var(--color-accent);
   padding: 0 var(--page-gutter) 84px;
+  width: 100%;
+  overflow-x: hidden;
 
   hr {
     width: 100%;
@@ -36,8 +38,9 @@ export const PresentationContainer = styled.div`
   border-radius: var(--radius-card);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
+  min-width: 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     flex-direction: column;
     gap: 0;
     margin-top: 118px;
@@ -45,14 +48,17 @@ export const PresentationContainer = styled.div`
 `;
 
 export const PresentationImage = styled.img`
+  flex: 0 0 min(42vw, 470px);
   width: min(42vw, 470px);
   height: 100%;
   min-height: 360px;
   object-fit: cover;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
+    flex-basis: auto;
     width: 100%;
-    min-height: 250px;
+    min-height: clamp(230px, 42vw, 320px);
+    aspect-ratio: 16 / 10;
   }
 
   @media (max-width: 430px) {
@@ -70,6 +76,7 @@ export const PresentationInner = styled.div`
   margin: 0 auto;
   gap: 12px;
   padding: clamp(24px, 3vw, 42px) clamp(22px, 3.4vw, 46px);
+  min-width: 0;
 `;
 
 export const AboutMeText = styled.h1`
@@ -80,6 +87,7 @@ export const AboutMeText = styled.h1`
   color: var(--color-accent);
   margin-bottom: 0;
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 
   @media (max-width: 768px) {
     font-size: 2.45rem;
@@ -98,6 +106,7 @@ export const PresentationText = styled.p`
   font-size: clamp(0.98rem, 0.8rem + 0.34vw, 1.08rem);
   line-height: 1.72;
   color: var(--color-text-soft);
+  overflow-wrap: anywhere;
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -128,6 +137,7 @@ export const HobbyContainer = styled.div`
   border-radius: var(--radius-card);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
+  min-width: 0;
 `;
 
 export const HobbyTitle = styled.h3`
@@ -138,6 +148,7 @@ export const HobbyTitle = styled.h3`
   color: var(--color-accent);
   margin-bottom: 16px;
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 `;
 
 export const HobbyText = styled.p`
@@ -148,6 +159,7 @@ export const HobbyText = styled.p`
   font-size: clamp(0.98rem, 0.8rem + 0.32vw, 1.08rem);
   line-height: 1.72;
   color: var(--color-text-soft);
+  overflow-wrap: anywhere;
 `;
 
 export const SkillsContainer = styled.div`
@@ -166,6 +178,7 @@ export const SkillsContainer = styled.div`
   border-radius: var(--radius-card);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
+  min-width: 0;
 `;
 
 export const SkillsTitle = styled.h3`
@@ -176,6 +189,7 @@ export const SkillsTitle = styled.h3`
   color: var(--color-accent);
   margin-bottom: 24px;
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 `;
 
 export const SkillBarContainer = styled.div`
@@ -279,6 +293,7 @@ export const ExperienceContainer = styled.div`
   border-radius: var(--radius-card);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
+  min-width: 0;
 `;
 
 export const SectionHeading = styled.h3`
@@ -288,11 +303,12 @@ export const SectionHeading = styled.h3`
   color: var(--color-accent);
   margin-bottom: 24px;
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 `;
 
 export const ExperienceGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 18px;
   width: 100%;
 `;
@@ -306,6 +322,7 @@ export const ExperienceCard = styled.article`
   border-radius: var(--radius-soft);
   border: 1px solid rgba(57, 57, 58, 0.08);
   background: rgba(246, 62, 2, 0.03);
+  min-width: 0;
 `;
 
 export const ExperienceHeader = styled.div`
@@ -319,18 +336,21 @@ export const ExperienceTitle = styled.h4`
   line-height: 1;
   color: var(--color-text);
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 `;
 
 export const ExperienceMeta = styled.p`
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--color-text-soft);
+  overflow-wrap: anywhere;
 `;
 
 export const ExperienceSummary = styled.p`
   font-size: 1rem;
   line-height: 1.65;
   color: var(--color-text-soft);
+  overflow-wrap: anywhere;
 `;
 
 export const ExperienceList = styled.ul`
@@ -346,7 +366,7 @@ export const ExperienceList = styled.ul`
 
 export const SkillGroupsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 16px;
   width: 100%;
   margin-top: 22px;
@@ -360,6 +380,7 @@ export const SkillGroupCard = styled.div`
   border-radius: var(--radius-soft);
   border: 1px solid rgba(57, 57, 58, 0.08);
   background: rgba(57, 57, 58, 0.03);
+  min-width: 0;
 `;
 
 export const SkillGroupTitle = styled.h4`
@@ -369,6 +390,7 @@ export const SkillGroupTitle = styled.h4`
   text-transform: uppercase;
   color: var(--color-text);
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 `;
 
 export const SkillTagList = styled.div`
@@ -386,6 +408,7 @@ export const SkillTag = styled.span`
   background: rgba(246, 62, 2, 0.08);
   color: var(--color-text);
   font-size: 0.9rem;
+  overflow-wrap: anywhere;
 `;
 
 export const ResumeGrid = styled.div`
@@ -413,6 +436,7 @@ export const ResumePanel = styled.article`
     rgba(251, 251, 255, 0.96)
   );
   box-shadow: var(--shadow-card);
+  min-width: 0;
 `;
 
 export const ResumePanelTitle = styled.h3`
@@ -420,6 +444,7 @@ export const ResumePanelTitle = styled.h3`
   line-height: 1;
   color: var(--color-accent);
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 `;
 
 export const ResumeItems = styled.div`
@@ -445,24 +470,28 @@ export const ResumeItemTitle = styled.h4`
   line-height: 1.35;
   color: var(--color-text);
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 `;
 
 export const ResumeItemMeta = styled.p`
   font-size: 0.92rem;
   line-height: 1.5;
   color: var(--color-text-soft);
+  overflow-wrap: anywhere;
 `;
 
 export const ResumeItemText = styled.p`
   font-size: 0.98rem;
   line-height: 1.7;
   color: var(--color-text-soft);
+  overflow-wrap: anywhere;
 `;
 
 export const ResumeItemNote = styled.p`
   font-size: 0.92rem;
   line-height: 1.5;
   color: var(--color-text);
+  overflow-wrap: anywhere;
 `;
 
 export const LanguageList = styled.div`
@@ -480,6 +509,7 @@ export const LanguagePill = styled.span`
   background: rgba(246, 62, 2, 0.08);
   color: var(--color-text);
   font-size: 0.92rem;
+  overflow-wrap: anywhere;
 `;
 
 export const InfoList = styled.div`
@@ -492,7 +522,9 @@ export const InfoLink = styled.a`
   text-decoration: none;
   line-height: 1.6;
   border-bottom: 1px solid rgba(57, 57, 58, 0.12);
+  max-width: 100%;
   width: fit-content;
+  overflow-wrap: anywhere;
 
   &:hover {
     color: var(--color-accent);
@@ -503,4 +535,5 @@ export const InfoLink = styled.a`
 export const InfoText = styled.p`
   color: var(--color-text-soft);
   line-height: 1.6;
+  overflow-wrap: anywhere;
 `;

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">Visual Studio</title>
+  <rect width="96" height="96" rx="22" fill="#5c2d91"/>
+  <path fill="#fbfbff" d="M74 18 42 32 22 18 12 25v46l10 7 20-14 32 14 10-5V23L74 18ZM25 34l11 14-11 14V34Zm27 4 18-8v36l-18-8V38Z"/>
+</svg>

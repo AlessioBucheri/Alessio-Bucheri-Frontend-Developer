@@ -19,13 +19,14 @@ export const ProjectCardContainer = styled.div`
   box-shadow: var(--shadow-card);
   margin: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
 
   &:hover {
     transform: translateY(-6px);
     box-shadow: 0 32px 80px rgba(18, 18, 20, 0.16);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     gap: 12px;
     padding: 16px;
     flex-direction: column;
@@ -40,6 +41,7 @@ export const ProjectCardInner = styled.div`
   gap: 14px;
   width: 100%;
   padding: 10px 6px 6px;
+  min-width: 0;
 `;
 
 export const ProjectCardTitle = styled.h2`
@@ -50,11 +52,16 @@ export const ProjectCardTitle = styled.h2`
   letter-spacing: -0.06em;
   color: var(--color-accent);
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     font-size: 2.15rem;
     align-self: center;
     text-align: center;
+  }
+
+  @media (max-width: 430px) {
+    font-size: clamp(1.78rem, 9vw, 2.08rem);
   }
 `;
 
@@ -64,8 +71,9 @@ export const ProjectCardHeadline = styled.p`
   line-height: 1.6;
   color: var(--color-text);
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     text-align: left;
   }
 `;
@@ -80,8 +88,9 @@ export const ProjectCardText = styled.div`
   max-width: 36rem;
   display: grid;
   gap: 14px;
+  min-width: 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     font-size: 0.96rem;
     align-self: flex-start;
     text-align: left;
@@ -102,6 +111,7 @@ export const ProjectCardLabel = styled.span`
   text-transform: uppercase;
   color: var(--color-text);
   font-family: "Copenhagen-Bold";
+  overflow-wrap: anywhere;
 `;
 
 export const ProjectCardValue = styled.p`
@@ -109,6 +119,7 @@ export const ProjectCardValue = styled.p`
   font-size: clamp(0.98rem, 0.8rem + 0.32vw, 1.08rem);
   line-height: 1.72;
   color: var(--color-text-soft);
+  overflow-wrap: anywhere;
 `;
 
 export const ProjectCardTagList = styled.div`
@@ -126,6 +137,7 @@ export const ProjectCardTag = styled.span`
   background: rgba(246, 62, 2, 0.08);
   color: var(--color-text);
   font-size: 0.9rem;
+  overflow-wrap: anywhere;
 `;
 
 export const ProjectCardLink = styled.a`
@@ -182,7 +194,7 @@ export const ProjectCardLink = styled.a`
     font-size: 0.72rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     align-self: center;
     width: 90px;
     height: 90px;
@@ -190,7 +202,9 @@ export const ProjectCardLink = styled.a`
 `;
 
 export const ProjectCardImg = styled.img`
+  flex: 1 1 min(48%, 560px);
   width: min(48vw, 560px);
+  max-width: 560px;
   min-height: 100%;
   object-fit: cover;
   aspect-ratio: 16 / 10;
@@ -202,9 +216,12 @@ export const ProjectCardImg = styled.img`
   border: 1px solid rgba(57, 57, 58, 0.18);
   border-radius: var(--radius-soft);
   box-shadow: var(--shadow-soft);
+  min-width: 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     margin-top: 0;
     width: 100%;
+    max-width: none;
+    min-height: auto;
   }
 `;

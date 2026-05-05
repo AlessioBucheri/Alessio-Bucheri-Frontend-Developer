@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">JSON</title>
+  <rect width="96" height="96" rx="22" fill="#fdb833"/>
+  <path fill="none" stroke="#242427" stroke-width="7" stroke-linecap="round" d="M36 24c-9 0-12 7-12 14v4c0 5-3 6-7 6 4 0 7 1 7 6v4c0 7 3 14 12 14m24-48c9 0 12 7 12 14v4c0 5 3 6 7 6-4 0-7 1-7 6v4c0 7-3 14-12 14"/>
+  <circle cx="48" cy="48" r="4" fill="#242427"/>
+</svg>

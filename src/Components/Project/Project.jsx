@@ -3,6 +3,31 @@ import projectsData from "../../Database/projectsData";
 import ProjectCard from "./ProjectCard";
 import { ProjectContainer } from "../../Style/ProjectStyle/ProjectStyle";
 
+const techIcons = [
+  { label: "HTML", icon: "/SliderImage/html.svg" },
+  { label: "CSS", icon: "/SliderImage/css.svg" },
+  { label: "JavaScript", icon: "/SliderImage/javascript.svg" },
+  { label: "TypeScript", icon: "/SliderImage/typescript.svg" },
+  { label: "React", icon: "/SliderImage/react.svg" },
+  { label: "Angular", icon: "/SliderImage/angular.svg" },
+  { label: "C Sharp", icon: "/SliderImage/csharp.svg" },
+  { label: ".NET", icon: "/SliderImage/dotnet.svg" },
+  { label: "ASP.NET", icon: "/SliderImage/aspnet.svg" },
+  { label: "Entity Framework", icon: "/SliderImage/entity-framework.svg" },
+  { label: "REST API", icon: "/SliderImage/rest-api.svg" },
+  { label: "JWT", icon: "/SliderImage/jwt.svg" },
+  { label: "SQL Server", icon: "/SliderImage/sql-server.svg" },
+  { label: "MongoDB", icon: "/SliderImage/mongodb.svg" },
+  { label: "JSON", icon: "/SliderImage/json.svg" },
+  { label: "Microservices", icon: "/SliderImage/microservices.svg" },
+  { label: "SoapUI", icon: "/SliderImage/soapui.svg" },
+  { label: "Git", icon: "/SliderImage/git.svg" },
+  { label: "GitHub", icon: "/SliderImage/github.svg" },
+  { label: "Azure DevOps", icon: "/SliderImage/azure-devops.svg" },
+  { label: "VS Code", icon: "/SliderImage/vs-code.svg" },
+  { label: "Visual Studio", icon: "/SliderImage/visual-studio.svg" },
+];
+
 export default function Project() {
   const settings = {
     dots: true,
@@ -61,24 +86,18 @@ export default function Project() {
       </div>
       <h4>Technologies I Use</h4>
       <Slider {...settings} className='slider'>
-        <div className='container'>
-          <img src='/SliderImage/html.png' alt='HTML logo' />
-        </div>
-        <div className='container'>
-          <img src='/SliderImage/css-3.png' alt='CSS logo' />
-        </div>
-        <div className='container'>
-          <img src='/SliderImage/java-script.png' alt='Javascript logo' />
-        </div>
-        <div className='container'>
-          <img src='/SliderImage/typescript.png' alt='Typescript logo' />
-        </div>
-        <div className='container'>
-          <img src='/SliderImage/github.png' alt='Github logo' />
-        </div>
-        <div className='container'>
-          <img src='/SliderImage/atom.png' alt='React logo' />
-        </div>
+        {techIcons.map((technology) => (
+          <div className='container' key={technology.label}>
+            <img
+              src={technology.icon}
+              alt={`${technology.label} logo`}
+              title={technology.label}
+              loading='lazy'
+              decoding='async'
+            />
+            <span className='tech-label'>{technology.label}</span>
+          </div>
+        ))}
       </Slider>
     </ProjectContainer>
   );

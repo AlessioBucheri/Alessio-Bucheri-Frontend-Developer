@@ -6,6 +6,7 @@ export const HomePageContent = styled.div`
   grid-template-rows: auto 1fr auto;
   align-items: stretch;
   width: 100%;
+  min-height: 100vh;
   height: 100vh;
   overflow: hidden;
   padding: 0 var(--page-gutter);
@@ -15,6 +16,11 @@ export const HomePageContent = styled.div`
   background-repeat: no-repeat;
   color: var(--color-accent);
   isolation: isolate;
+
+  @supports (height: 100dvh) {
+    min-height: 100dvh;
+    height: 100dvh;
+  }
 
   &::after {
     content: "";
@@ -36,7 +42,13 @@ export const HomePageContent = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 0 16px;
+    padding: 0 var(--page-gutter);
+  }
+
+  @media (max-height: 620px) {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
   }
 `;
 
@@ -49,6 +61,7 @@ export const Container = styled.div`
   padding: clamp(120px, 18vh, 170px) 0 clamp(120px, 18vh, 170px);
   position: relative;
   z-index: 2;
+  min-width: 0;
 
   @media (max-width: 960px) {
     gap: 28px;
@@ -58,7 +71,11 @@ export const Container = styled.div`
     display: flex;
     align-items: end;
     justify-content: flex-start;
-    padding: 112px 0 116px;
+    padding: clamp(96px, 18svh, 112px) 0 clamp(104px, 18svh, 116px);
+  }
+
+  @media (max-height: 620px) {
+    padding: 96px 0 92px;
   }
 `;
 
@@ -69,6 +86,7 @@ export const From = styled.div`
   gap: 16px;
   width: max-content;
   justify-self: start;
+  max-width: 100%;
   min-height: 56px;
   background: rgba(251, 251, 255, 0.84);
   margin: 0;
@@ -97,6 +115,8 @@ export const From = styled.div`
     font-family: "Copenhagen-Bold";
     white-space: nowrap;
     line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .globe-icon {
@@ -128,10 +148,11 @@ export const From = styled.div`
 
   @media (max-width: 768px) {
     min-height: 48px;
-    padding: 0 14px 0 18px;
+    gap: 12px;
+    padding: 0 12px 0 16px;
 
     p {
-      font-size: 0.76rem;
+      font-size: clamp(0.68rem, 2.6vw, 0.76rem);
     }
 
     .globe-icon {
@@ -149,6 +170,7 @@ export const Introduction = styled.div`
   justify-self: end;
   width: min(52vw, 760px);
   max-width: 760px;
+  min-width: 0;
   margin: 0;
   padding: 0;
   text-align: right;
@@ -191,7 +213,7 @@ export const NameScroller = styled.div`
 
   @media (max-width: 768px) {
     bottom: 14px;
-    width: calc(100% - 32px);
+    width: calc(100% - (var(--page-gutter) * 2));
     opacity: 0.28;
   }
 `;
@@ -232,7 +254,7 @@ export const StageAnimation = styled.div`
     padding: 22px 0 18px;
 
     p {
-      font-size: 22vw;
+      font-size: clamp(4.4rem, 22vw, 7rem);
     }
   }
 `;

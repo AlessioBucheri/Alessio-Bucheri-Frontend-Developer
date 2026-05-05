@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">Azure DevOps</title>
+  <rect width="96" height="96" rx="22" fill="#0078d4"/>
+  <path fill="#fbfbff" d="M22 29 52 16v14l-18 7 18 7v14L22 45V29Zm52 1v38L45 80V66l17-7V37L45 30V16l29 14Z"/>
+</svg>

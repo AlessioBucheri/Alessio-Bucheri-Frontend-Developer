@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">C Sharp</title>
+  <rect width="96" height="96" rx="22" fill="#6f2dbd"/>
+  <path fill="#8f55dd" d="M48 12 79 30v36L48 84 17 66V30l31-18Z"/>
+  <text x="48" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#fff">C#</text>
+</svg>

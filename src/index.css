@@ -8,6 +8,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 :root {
@@ -25,6 +26,14 @@ html {
     --radius-card: 30px;
     --radius-soft: 20px;
     --radius-pill: 999px;
+}
+
+@media (max-width: 480px) {
+    :root {
+        --page-gutter: 16px;
+        --radius-card: 22px;
+        --radius-soft: 16px;
+    }
 }
 
 @font-face {
@@ -59,6 +68,12 @@ body {
     color: var(--color-surface);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+#root {
+    min-height: 100vh;
+    min-height: 100svh;
 }
 
 a {
@@ -68,6 +83,7 @@ a {
 img {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
 ::selection {

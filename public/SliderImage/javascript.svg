@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">JavaScript</title>
+  <rect width="96" height="96" rx="22" fill="#f7df1e"/>
+  <path fill="#242427" d="M25 67c3 5 8 8 15 8 9 0 15-5 15-15V33h-9v27c0 5-2 7-6 7-3 0-6-2-8-5l-7 5Zm34-1c3 6 9 9 17 9 9 0 15-5 15-13 0-8-5-11-14-15l-3-1c-5-2-7-3-7-6s2-5 6-5 6 2 8 5l7-5c-3-5-8-8-15-8-9 0-15 6-15 13 0 8 5 11 13 14l3 1c5 2 7 4 7 7s-3 5-7 5c-5 0-8-2-10-6l-7 5Z"/>
+</svg>

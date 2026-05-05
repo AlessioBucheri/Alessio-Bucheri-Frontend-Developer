@@ -10,6 +10,7 @@ export const FooterContainer = styled.div`
   padding: 0 var(--page-gutter) 24px;
   color: var(--color-accent);
   box-sizing: border-box;
+  overflow-x: hidden;
 
   @media (max-width: 768px) {
     padding-bottom: 20px;
@@ -26,6 +27,8 @@ export const FooterHeader = styled.h1`
   padding: 24px 0 0;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  min-width: 0;
+  overflow-wrap: anywhere;
 
   .material-symbols-outlined {
     font-size: 1.1em;
@@ -36,6 +39,7 @@ export const FooterText = styled.div`
   width: 100%;
   text-align: left;
   overflow: hidden;
+  min-width: 0;
 
   h1 {
     max-width: none;
@@ -46,6 +50,14 @@ export const FooterText = styled.div`
     margin: 0;
     font-family: "Copenhagen-Bold";
     white-space: nowrap;
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 430px) {
+    h1 {
+      white-space: normal;
+      text-wrap: balance;
+    }
   }
 `;
 
@@ -55,6 +67,7 @@ export const FooterEmail = styled.p`
   padding: 10px 0 20px;
   overflow: hidden;
   margin-bottom: 10px;
+  overflow-wrap: anywhere;
 
   a {
     text-decoration: none;
@@ -62,6 +75,7 @@ export const FooterEmail = styled.p`
     border-bottom: 1px solid rgba(253, 184, 51, 0.35);
     padding-bottom: 3px;
     transition: color 0.25s ease, border-color 0.25s ease;
+    overflow-wrap: anywhere;
   }
 
   a:hover {
@@ -84,6 +98,7 @@ export const FooterSocial = styled.div`
   );
   border-radius: 28px;
   overflow: hidden;
+  min-width: 0;
 
   .contact-linkedin {
     border-right: 1px solid rgba(251, 251, 255, 0.2);
@@ -117,35 +132,112 @@ export const FooterSocialLink = styled.a`
   line-height: 1;
   cursor: pointer;
   overflow: hidden;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  isolation: isolate;
+  --fill-color: var(--color-accent);
+  --fill-start: -112%;
+  --fill-skew: -10deg;
+  --highlight-start: -38%;
+  --highlight-end: 42%;
+  transition: color 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  min-width: 0;
+
+  &.contact-linkedin {
+    --fill-start: -112%;
+    --fill-skew: -10deg;
+    --highlight-start: -38%;
+    --highlight-end: 42%;
+  }
+
+  &#contact-github {
+    --fill-color: var(--color-text);
+    --fill-start: 0;
+    --fill-skew: 0deg;
+    --highlight-start: -28%;
+    --highlight-end: 28%;
+  }
+
+  &#contact-instagram {
+    --fill-start: 112%;
+    --fill-skew: 10deg;
+    --highlight-start: 38%;
+    --highlight-end: -42%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(251, 251, 255, 0.18) 42%,
+      transparent 70%
+    );
+    opacity: 0;
+    transform: translateX(var(--highlight-start));
+    transition: opacity 0.35s ease,
+      transform 0.76s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 1;
+    pointer-events: none;
+  }
 
   &:hover {
     color: var(--color-surface);
     background-color: rgba(251, 251, 255, 0.04);
+    box-shadow: inset 0 0 0 1px rgba(251, 251, 255, 0.08);
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: translateX(var(--highlight-end));
   }
 
   .btn-fill {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 180%;
-    height: 180%;
-    background-color: var(--color-accent);
-    border-radius: 50%;
-    transform: translate(-50%, -32%) scale(0);
-    transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    inset: -2px -18%;
+    width: auto;
+    height: auto;
+    background:
+      linear-gradient(
+        110deg,
+        transparent 0%,
+        rgba(251, 251, 255, 0.16) 10%,
+        transparent 24%
+      ),
+      var(--fill-color);
+    border-radius: inherit;
+    box-shadow: inset 0 1px 0 rgba(251, 251, 255, 0.14);
+    transform: translateX(var(--fill-start)) skewX(var(--fill-skew));
+    transform-origin: center;
+    transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
     z-index: 0;
   }
 
+  &#contact-github .btn-fill {
+    transform: translateY(105%) skewX(var(--fill-skew));
+  }
+
   &:hover .btn-fill {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translateX(0) skewX(var(--fill-skew));
+  }
+
+  &#contact-github:hover .btn-fill {
+    transform: translateY(0) skewX(var(--fill-skew));
   }
 
   .btn-text {
     position: relative;
     padding: 6px 10px;
-    z-index: 1;
+    z-index: 2;
     letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+    transition: transform 0.35s ease, text-shadow 0.35s ease;
+  }
+
+  &:hover .btn-text {
+    transform: translateY(-1px);
+    text-shadow: 0 8px 22px rgba(18, 18, 20, 0.22);
   }
 
   @media (max-width: 768px) {

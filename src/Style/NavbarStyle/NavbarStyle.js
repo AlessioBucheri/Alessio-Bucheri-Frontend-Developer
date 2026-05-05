@@ -12,6 +12,7 @@ export const Nav = styled.nav`
   width: 100%;
   padding: clamp(18px, 2.4vw, 30px) var(--page-gutter);
   z-index: 20;
+  gap: 18px;
 
   ul {
     display: flex;
@@ -20,6 +21,11 @@ export const Nav = styled.nav`
     list-style: none;
     margin: 0;
     padding: 0;
+    min-width: 0;
+  }
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
   }
 `;
 
@@ -28,6 +34,7 @@ export const NavTitle = styled(Link)`
   align-items: center;
   justify-content: center;
   width: fit-content;
+  max-width: min(100%, 420px);
   min-height: 56px;
   font-size: clamp(0.95rem, 0.6rem + 0.9vw, 1.2rem);
   font-weight: 700;
@@ -61,9 +68,10 @@ export const NavTitle = styled(Link)`
   }
 
   @media (max-width: 768px) {
-    font-size: 0.8rem;
+    max-width: calc(100vw - 92px);
+    font-size: clamp(0.68rem, 2.4vw, 0.8rem);
     min-height: 48px;
-    padding: 0 20px;
+    padding: 0 16px;
   }
 `;
 
@@ -116,8 +124,8 @@ export const NavItem = styled(Link)`
 export const HamburgerIcon = styled.div`
   display: none;
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: clamp(18px, 2.4vw, 24px);
+  right: var(--page-gutter);
   flex-direction: column;
   cursor: pointer;
   padding: 8px;
@@ -146,13 +154,15 @@ export const MobileMenu = styled.div`
   top: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   background: linear-gradient(
     135deg,
     rgba(246, 62, 2, 0.96),
     rgba(185, 46, 8, 0.92)
   );
   padding: 28px 24px;
+  overflow-y: auto;
   transition: transform 0.3s ease-in-out;
   transform: ${({ $isOpen }) =>
     $isOpen ? "translateX(0)" : "translateX(100%)"};
@@ -169,6 +179,7 @@ export const MobileMenu = styled.div`
     padding: 18px 0;
     font-size: clamp(1.7rem, 6vw, 2.3rem);
     text-align: center;
+    overflow-wrap: anywhere;
 
     &:hover {
       color: var(--color-surface);

@@ -25,6 +25,7 @@ const slideDown = keyframes`
 export const ContactContainer = styled.div`
   background: var(--color-bg);
   color: var(--color-accent);
+  overflow-x: hidden;
 `;
 
 export const ContactContent = styled.div`
@@ -38,6 +39,7 @@ export const ContactContent = styled.div`
   width: min(1280px, 100%);
   margin: 0 auto;
   padding: clamp(112px, 12vw, 136px) clamp(20px, 4vw, 48px) 88px;
+  min-width: 0;
 
   h1 {
     align-self: flex-start;
@@ -51,19 +53,27 @@ export const ContactContent = styled.div`
     font-family: "Copenhagen-Bold";
     white-space: nowrap;
     animation: ${slideIn} 1s ease-out;
+    overflow-wrap: anywhere;
   }
 
   .animate {
     animation: ${slideIn} 1s ease-out;
   }
 
+  @media (max-width: 900px) {
+    h1 {
+      max-width: 18ch;
+      white-space: normal;
+      text-align: left;
+      text-wrap: balance;
+    }
+  }
+
   @media (max-width: 768px) {
-    padding: 108px 16px 72px;
+    padding: 108px var(--page-gutter) 72px;
 
     h1 {
       max-width: 11ch;
-      white-space: normal;
-      text-align: left;
     }
   }
 `;
@@ -86,6 +96,7 @@ export const ContactForm = styled.form`
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
   animation: ${slideDown} 1s ease-out;
+  min-width: 0;
 
   label {
     font-size: clamp(0.84rem, 0.74rem + 0.2vw, 0.96rem);
@@ -120,6 +131,7 @@ export const ContactForm = styled.form`
     line-height: 1.72;
     animation: ${slideDown} 1s ease-out;
     transition: color 0.2s ease, box-shadow 0.2s ease;
+    min-width: 0;
 
     &:focus {
       box-shadow: inset 0 -2px 0 var(--color-accent);
@@ -168,6 +180,7 @@ export const ContactForm = styled.form`
     line-height: 1.72;
     animation: ${slideDown} 1s ease-out;
     transition: color 0.2s ease, box-shadow 0.2s ease;
+    min-width: 0;
 
     &:focus {
       box-shadow: inset 0 -2px 0 var(--color-accent);
@@ -177,6 +190,18 @@ export const ContactForm = styled.form`
     &::placeholder {
       color: rgba(98, 94, 87, 0.58);
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: clamp(20px, 6vw, 28px);
+
+    textarea {
+      min-height: 9.5em;
+    }
+  }
+
+  @media (max-width: 380px) {
+    padding: 20px;
   }
 `;
 
@@ -240,6 +265,7 @@ export const ContactButton = styled.button`
     font-size: clamp(0.72rem, 0.64rem + 0.2vw, 0.82rem);
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    padding: 0 8px;
   }
 
   @media (max-width: 768px) {
