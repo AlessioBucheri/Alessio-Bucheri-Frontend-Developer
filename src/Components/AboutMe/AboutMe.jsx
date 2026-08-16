@@ -68,7 +68,7 @@ export default function AboutMe() {
       <Section index={0}>
         <S.PresentationContainer>
           <S.PresentationImage
-            src='/AboutMeImage/presentationImage.svg'
+            src='/AboutMeImage/presentationImage.webp'
             alt='my profile picture'
             loading='lazy'
           />

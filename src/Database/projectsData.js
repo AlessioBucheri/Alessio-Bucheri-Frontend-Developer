@@ -23,7 +23,7 @@ const projectsData = [
     challenge:
       "Implementing efficient API calls and dynamic airport suggestions in real time while typing.",
     link: "https://footprinttravel.netlify.app/",
-    image: "/ProjectImage/footprintTravel.png",
+    image: "/ProjectImage/footprintTravel.webp",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const projectsData = [
     challenge:
       "Building a first full React application and learning how to structure state, components and data flows.",
     link: "https://greengourmet.netlify.app/",
-    image: "/ProjectImage/greengourmet.png",
+    image: "/ProjectImage/greengourmet.webp",
   },
   {
     id: 3,

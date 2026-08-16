@@ -10,7 +10,7 @@ export const HomePageContent = styled.div`
   height: 100vh;
   overflow: hidden;
   padding: 0 var(--page-gutter);
-  background-image: url("/HomePageBackground.svg");
+  background-image: url("/HomePageBackground.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
