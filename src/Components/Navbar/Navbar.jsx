@@ -29,13 +29,20 @@ export default function Navbar() {
       >
         &copy; Code by Alessio Bucheri
       </NavTitle>
-      <HamburgerIcon onClick={toggleMenu}>
+      <HamburgerIcon
+        type='button'
+        onClick={toggleMenu}
+        aria-label={isOpen ? "Close menu" : "Open menu"}
+        aria-expanded={isOpen}
+      >
         <div></div>
         <div></div>
         <div></div>
       </HamburgerIcon>
       <MobileMenu $isOpen={isOpen}>
-        <CloseButton onClick={toggleMenu}>x</CloseButton>
+        <CloseButton type='button' onClick={toggleMenu} aria-label='Close menu'>
+          x
+        </CloseButton>
         <NavItem
           to='/about'
           onClick={toggleMenu}

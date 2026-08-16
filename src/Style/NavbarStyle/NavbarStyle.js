@@ -121,7 +121,7 @@ export const NavItem = styled(Link)`
   }
 `;
 
-export const HamburgerIcon = styled.div`
+export const HamburgerIcon = styled.button`
   display: none;
   position: absolute;
   top: clamp(18px, 2.4vw, 24px);
@@ -129,9 +129,11 @@ export const HamburgerIcon = styled.div`
   flex-direction: column;
   cursor: pointer;
   padding: 8px;
+  border: none;
   border-radius: 14px;
   background: rgba(251, 251, 255, 0.88);
   box-shadow: 0 14px 30px rgba(18, 18, 20, 0.12);
+  font: inherit;
 
   div {
     width: 25px;
@@ -195,11 +197,14 @@ export const MobileMenu = styled.div`
   }
 `;
 
-export const CloseButton = styled.div`
+export const CloseButton = styled.button`
   align-self: flex-end;
   cursor: pointer;
   font-size: 2rem;
+  line-height: 1;
+  font-family: inherit;
   color: var(--color-surface);
+  background: transparent;
   padding: 4px 10px;
   border: 1px solid rgba(251, 251, 255, 0.45);
   border-radius: var(--radius-pill);

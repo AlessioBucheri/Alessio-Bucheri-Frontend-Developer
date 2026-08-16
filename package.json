@@ -1,5 +1,5 @@
 {
-  "name": "my-vue-app",
+  "name": "alessio-bucheri-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,25 +15,21 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
     "react-helmet-async": "^2.0.5",
     "react-intersection-observer": "^9.10.3",
-    "react-lottie": "^1.2.4",
-    "react-responsive": "^10.0.0",
-    "react-router-dom": "^6.24.0",
+    "react-router-dom": "^7.18.2",
     "react-slick": "^0.30.2",
-    "react-spring": "^9.7.3",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^6.0.5",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "vite": "^5.2.0"
+    "vite": "^8.2.1"
   }
 }

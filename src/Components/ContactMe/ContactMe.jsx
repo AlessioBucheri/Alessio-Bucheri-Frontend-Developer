@@ -29,9 +29,12 @@ export default function ContactMe() {
     setIsSending(true);
 
     emailjs
-      .sendForm("service_qa87gth", "template_l2aqchu", form.current, {
-        publicKey: "KtN6gM7SxZPZffzQT",
-      })
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+      )
       .then(
         () => {
           setConfirmation("Your message has been sent!");
