@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { animated } from "react-spring";
 
 export const AboutMeContainer = styled.div`
   display: flex;
@@ -217,7 +216,7 @@ export const SkillBarTrack = styled.div`
   overflow: hidden;
 `;
 
-export const SkillBarFill = styled(animated.div)`
+export const SkillBarFill = styled.div`
   height: 16px;
   background: linear-gradient(
     90deg,
